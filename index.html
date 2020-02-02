@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<title>Rekoark</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script>
+// Get the modal
+function openModal(d) {
+  document.getElementById(d).style.display = "block";
+}
+
+function closeModal(d) {
+  document.getElementById(d).style.display = "none";
+}
+
+// Sideshows
+
+// [Ala, Arenan, Danskebank, Pyramiden, Ulriksdal, Solna stadshus, Sturevägen, Tillgänglighet ]
+// [ 0,     1,      2,           3,        4,         5,              6,            7         ]
+
+var slideIndex = [1,1,1,1,1,1,1,1,1];
+var slideId = ["slides0", "slides1", "slides2", "slides3", "slides4", "slides5", "slides6", "slides7", "slides8"]
+var dotId = ["dots0", "dots1", "dots2", "dots3", "dots4", "dots5", "dots6", "dots7", "dots8"]
+//showDivs(1, 0);
+//showDivs(1, 1);
+
+function plusDivs(n, no) {
+  showDivs(slideIndex[no] += n, no);
+}
+
+function currentDiv(n, no) {
+  showDivs(slideIndex[no] = n, no);
+}
+
+function showDivs(n, no) {
+  var i;
+  var x = document.getElementsByClassName(slideId[no]);
+  var dots = document.getElementsByClassName(dotId[no]);
+  if (n > x.length) {slideIndex[no] = 1}
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    //dots[i].className = dots[i].className.replace(" w3-white", "");
+    dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+  }
+  x[slideIndex[no]-1].style.display = "block";
+ //dots[slideIndex[no]-1].className += " w3-white";
+  dots[slideIndex[no]-1].className += " w3-opacity-off";
+}
+
+</script>
+<style type="text/css">
+
+html {
+  /*background-color: rgba(50,90,50,1);*/
+  background-color: #87A99B;
+}
+
+
+#quote {
+  font-family: "American Typewriter", serif;
+  font-size: 14px;
+  color: rgba(0,0,0,1);  
+  /*text-shadow: 3px 3px 5px #000000;*/
+  background-color: rgba(0,0,0,0);
+  overflow: hidden;
+  border: 1px solid #FFFFFF;
+}
+
+.pagecol {
+  width: 90%;
+  max-width:1500px;
+  max-width:1800px;
+  margin: auto;
+  background-color: rgba(255,255,255,1);
+}
+
+  /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* misc*/
+
+.btn {cursor: pointer; color:#FFF; text-shadow: 2px 2px 8px #000000;}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+
+.thumb {max-width: 120px; padding-bottom: 8px; padding-right: 8px}
+
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button">REKOARK</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <!--<a href="#about" class="w3-bar-item w3-button">Om Rekoark</a>-->
+      <a href="#aboutme" class="w3-bar-item w3-button">Om mig</a>
+      <a href="#projects" class="w3-bar-item w3-button">Projekt</a>
+      <a href="#contact" class="w3-bar-item w3-button">Kontakt</a>
+    </div>
+  </div>
+</div>
+
+<div class="pagecol" style="max-width:1500px;">
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px; overflow: hidden;" id="home">
+  <img class="w3-image" src="images/Banner.png" alt="Architecture" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+
+    <!--<p style="color: #FFFFFF; font-size: 90px;">REKOARK</p><br/>-->
+    <img src="images/RekoarkLogo.png">
+
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px;">
+
+
+<!-- Main Content -->
+  <div class="w3-container w3-padding-32" id="quote">
+    <div style="border: 1px solid #AAAAAA; padding: 10px; width: 50%; margin-top: 15px; border-radius: 5px; background-color: #FFFFFF">
+    <p>
+      <b>Svenska Akademiens ordlista:</b><br/>
+      reko [re&acute;ko] ob&ouml;jligt adjektiv &#9679; &#10216;vard.&#10217; rekorderlig, rej&auml;l
+    </p>
+    <p>
+      <b>Svensk ordbok:</b><br/>
+      reko adjektiv, ingen b&ouml;jning &#9679; hygglig och p&aring;­litlig vard. JFR juste <br/>
+       &#9679; r&auml;tt­vis och &auml;rlig vard. JFR reko, sportslig, renh&aring;rig, schysst 
+    </p>
+    <p>
+      <b>Svenska Akademiens ordbok:</b><br/>
+      REKO, se rekorderlig <br/>
+      REKORDERLIG <br/>
+      om person: rej&auml;l, dugande, duktig, p&aring;litlig, pr&auml;ktig, redbar, respektabel.
+    </p>
+  </div>
+  </div>
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="about">
+    <!--<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Om Rekoark</h3>-->
+    <p>V&auml;lkommen till Rekoark! Kul att du hittat hit.</p>
+    <p>
+      Rekoark &auml;r ett litet nystartat arkitektkontor som i f&ouml;rsta hand fokuserar p&aring; byggnadsv&aring;rd och h&aring;llbart byggande.
+      Jag som driver Rekoark heter Susan Hende och jag hj&auml;lper dig g&auml;rna med skisser, bygglovshandlingar, bygghandlingar, f&auml;rgs&auml;ttning eller kanske bara bollplankning av olika idéer om alternativa material och planl&ouml;sningar. Ut&ouml;ver det s&aring; kan jag ocks&aring; g&ouml;ra tillg&auml;nglighetsgranskningar och skriva utl&aring;tanden.
+    </p>
+  </div>
+
+  <div class="w3-container w3-padding-32" id="aboutme">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Om mig</h3>
+
+       <div class="w3-row-padding">
+          <div class="w3-col l6 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+              
+              <p>
+                Jag &auml;r en erfaren arkitekt som tidigare huvudsakligen jobbat med vanliga kommersiella projekt; flerfamiljshus, v&aring;rdbyggnader och kontor samt detaljplaner. Jag har ocks&aring; varit handl&auml;ggare i tv&aring; riktigt stora projekt; Friends arenas entré- och konferensbyggnad samt SEB-nya huvudkontor p&aring; 96 000 kvm. Ut&ouml;ver det s&aring; har jag gjort en del inredningar och f&auml;rgs&auml;ttningar samt jobbat mycket med tillg&auml;nglighet.
+              </p>
+              <p>
+                F&ouml;r n&aring;gra &aring;r sedan, efter flera v&auml;ldigt stressiga &aring;r, s&aring; drabbades jag av utmattningssyndrom och har efter det f&ouml;rs&ouml;kt hitta en b&auml;ttre balans i vardagen. En s&auml;tt att f&aring; b&auml;ttre kontroll &ouml;ver min arbetssituation var att s&auml;ga upp mig och starta eget, f&ouml;r att kunna jobba med de fr&aring;gor som intresserar mig mest: byggnadsv&aring;rd och h&aring;llbart byggande.  
+              </p>
+              <p>
+                Jag har flera utbildningar inom byggnadsv&aring;rd och h&aring;llbart byggande (som ju har m&aring;nga paralleller) och jag har &auml;ven haft egna byggnadsv&aring;rdsprojekt. I nul&auml;get h&aring;ller jag dessutom p&aring; att renovera ett 1870-talshus p&aring; Gotland, med en blandning av traditionella tekniker och lerbygge. 
+              </p>
+              <p>Till mina kunder kommer jag alltid att i f&ouml;rsta hand f&ouml;resl&aring; milj&ouml;v&auml;nliga och h&aring;llbara material och metoder.</p>
+
+
+            </div>
+          </div>
+          <div class="w3-col l6 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+              <div class="w3-display-bottomright w3-padding" style="font-size: x-small; color: #555;">Foto: Lena Karlin</div>
+              <img src="images/Susan.png" alt="House" style="width:100%">
+            </div>
+          </div>
+      </div>
+
+
+    <br/>
+
+      <p><b>Utbildningar</b></p>
+      <p>1997-1998 Byggnadsrestaurering och Kulturmilj&ouml;v&aring;rd<br/>H&ouml;gskolan p&aring; Gotland, Visby</p>
+      <p>1986-1991 Arkitekt<br/>Chalmers, G&ouml;teborg</p>
+      
+      <p><b>Kurser</b></p>
+      <p>2018  Beh&ouml;rig Kulturbyggnader<br/>Byggnadsv&aring;rdsf&ouml;retagen</p>
+      <p>2017  Milj&ouml;byggnad baskurs 3.0<br/>SGBC</p>
+      <p>2017  Kulturv&auml;rden i plan- och bygglovprocessen<br/>Approvus</p>
+      <p>2016  Milj&ouml;byggnad baskurs<br/>SGBC</p>
+      <p>2014  Tillg&auml;nglighet<br/>BFAB, Stockholm</p>
+      <p>2008  Tillg&auml;nglighet, grundkurs<br/>BFAB, Stockholm</p>
+
+
+  </div>
+
+<!-- Page content -->
+<!--<div class="w3-content w3-padding" style="max-width:1564px">-->
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Projekt</h3>
+  </div>
+
+
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container" onclick="openModal('ala');showDivs(1, 0)">
+        <div class="w3-display-topleft w3-black w3-padding">Byggnadsv&aring;rd och h&aring;llbart byggande</div>
+        <img src="images/Ala1.png" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container" onclick="openModal('arenan');showDivs(1, 1)">
+        <div class="w3-display-topleft w3-black w3-padding">Friends arena</div>
+        <img src="images/Arenan1.png" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container" onclick="openModal('danskebank');showDivs(1, 2)">
+        <div class="w3-display-topleft w3-black w3-padding">Danske bank</div>
+        <img src="images/Danskebank1.png" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container" onclick="openModal('pyramiden');showDivs(1, 3)">
+        <div class="w3-display-topleft w3-black w3-padding">SEB:s huvudkontor i Solna</div>
+        <img src="images/Pyramiden1.png" alt="House" style="width:100%">
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container" onclick="openModal('ulriksdal');showDivs(1, 4)">
+        <div class="w3-display-topleft w3-black w3-padding">Ulriksdalsskolan</div>
+        <img src="images/Ulriksdalsskolan1.png" alt="House" style="width:99%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container" onclick="openModal('solna');showDivs(1, 5)">
+        <div class="w3-display-topleft w3-black w3-padding">Solna</div>
+        <img src="images/SolnaSoc1.png" alt="House" style="width:99%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container" onclick="openModal('sture');showDivs(1, 6)">
+        <div class="w3-display-topleft w3-black w3-padding">Sturev&auml;gen</div>
+        <img src="images/Sture1.png" alt="House" style="width:99%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container" onclick="openModal('avail');showDivs(1, 7)">
+        <div class="w3-display-topleft w3-black w3-padding">Tillg&auml;nglighet</div>
+        <img src="images/Avail1.png" alt="House" style="width:99%">
+      </div>
+    </div>
+  </div>
+
+
+  <div id="ala" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('ala')">&times;</span>
+      <div class="w3-content w3-display-container">
+          <img class="slides0" src="images/Ala1.png" style="width:100%">
+          <img class="slides0" src="images/Ala2.png" style="width:100%">
+          <img class="slides0" src="images/Ala3.png" style="width:100%">
+          <img class="slides0" src="images/Ala4.png" style="width:100%">
+          <div class="w3-row-padding w3-section" style="text-align: center;">
+            <div style="display: inline-block">
+
+              <div class="w3-col s3">
+                <img class="dots0 w3-opacity w3-hover-opacity-off thumb" src="images/Ala1.png" style="width:100%;cursor:pointer" onclick="currentDiv(1, 0)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots0 w3-opacity w3-hover-opacity-off thumb" src="images/Ala2.png" style="width:100%;cursor:pointer" onclick="currentDiv(2, 0)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots0 w3-opacity w3-hover-opacity-off thumb" src="images/Ala3.png" style="width:100%;cursor:pointer" onclick="currentDiv(3, 0)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots0 w3-opacity w3-hover-opacity-off thumb" src="images/Ala4.png" style="width:100%;cursor:pointer" onclick="currentDiv(4, 0)">
+              </div>
+
+            </div>
+
+          </div>
+      </div>
+
+        <p><b>Byggnadsv&aring;rd och h&aring;llbart byggande</b></p>
+        <p>Detta &auml;r vad jag brinner f&ouml;r, b&aring;de byggnadsv&aring;rd och h&aring;llbart byggande som jag ser som tv&aring; saker som g&aring;r hand i hand. Att riva ett mer eller mindre friskt hus f&ouml;r att bygga ett nytt &auml;r inte h&aring;llbart hur eko det nya &auml;n &auml;r. Vi m&aring;ste sluta bygga med d&aring;liga material d&auml;r hastighet och snabba pengar &auml;r de viktigaste parametrarna. L&aring;ngsiktigt och gediget byggande med sunda, lokala material och med byggnadsdelar som g&aring;r att underh&aring;lla &auml;r enda v&auml;gen fram&aring;t.</p>
+
+        <p>Jag har precis blivit tillfr&aring;gad om jag kan ta mig an ett halmbalsbyggprojekt p&aring; Gotland, sj&auml;lvklart sa jag ja! Helt i mitt intresseomr&aring;de men ocks&aring; helt nytt f&ouml;r mig, ser fram emot att l&auml;ra mig massa nya saker p&aring; v&auml;gen, kul &#128515; Mer om detta kommer s&auml;kerligen h&auml;r p&aring; sidan fram&ouml;ver.</p>
+
+        <p>Min man och jag har ett eget byggnadsv&aring;rdsprojekt som fortskrider s&aring; sakteliga d&auml;r vi renoverar ett litet hus fr&aring;n 1870 med fokus p&aring; lera b&aring;de i v&auml;ggar och golv. Om n&aring;gon &auml;r mer intresserad av vad vi g&ouml;r d&auml;r s&aring; kika g&auml;rna p&aring; v&aring;rt instagramkonto f&ouml;r projektet: @pinnmurshuset</p>
+
+        <p>Foton: mina egna</p>
+
+    </div>
+  </div> <!-- end of ala -->
+
+  <div id="arenan" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('arenan')">&times;</span>
+      <div class="w3-content w3-display-container">
+          <img class="slides1" src="images/Arenan1.png" style="width:100%">
+          <img class="slides1" src="images/Arenan2.png" style="width:100%">
+          <div class="w3-row-padding w3-section" style="text-align: center;">
+            <div style="display: inline-block">
+
+             <div class="w3-col s6">
+                <img class="dots1 w3-opacity w3-hover-opacity-off thumb" src="images/Arenan1.png" style="width:100%;cursor:pointer" onclick="currentDiv(1, 1)">
+              </div>
+              <div class="w3-col s6">
+                <img class="dots1 w3-opacity w3-hover-opacity-off thumb" src="images/Arenan2.png" style="width:100%;cursor:pointer" onclick="currentDiv(2, 1)">
+              </div>
+
+
+            </div>
+          </div>
+      </div>
+
+        <p><b>Friends Arena</b></p>
+        <p>Friends Arena &auml;r ett samarbetsprojekt mellan Berg Arkitektkontor och Krook &amp; Tj&auml;der och min f&ouml;rsta roll i detta projekt var under min anst&auml;llning p&aring; Berg Arkitektkontor d&aring; jag gick in som ansvarig f&ouml;r all tillg&auml;nglighet p&aring; arenan. Sedan blev jag inplockad i teamet som projekterade entrébyggnaden till arenan med huvudentré, sportbar, garage, restaurangk&ouml;k, konferenslokaler och g&aring;ngbro till det anslutande hotellet som Wing&aring;rdhs arkitekter jobbade med parallellt. Min roll var som handl&auml;ggare f&ouml;r alla ytor &ouml;ver markniv&aring; s&aring; det innebar m&aring;nga samordningsfr&aring;gor b&aring;de med &ouml;vriga projekt&ouml;rer och med Wing&aring;rdhs. Under denna tid s&aring; gick jag ocks&aring; &ouml;ver och blev anst&auml;lld p&aring; Krook &amp; Tj&auml;der. Kul projekt med m&aring;nga trevliga kontakter och problemst&auml;llningar.</p>
+
+        <p>Uppdragsgivare: Peab<br/>
+        Bilder: renderingar Krook &amp; Tj&auml;der</p>
+
+
+    </div>
+  </div> <!-- end of arenan -->
+
+
+  <div id="danskebank" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('danskebank')">&times;</span>
+      <div class="w3-content w3-display-container">
+          <img class="slides2" src="images/Danskebank1.png" style="width:100%">
+          <img class="slides2" src="images/Danskebank2.png" style="width:100%">
+          <img class="slides2" src="images/Danskebank3.png" style="width:100%">
+          <img class="slides2" src="images/Danskebank4.png" style="width:100%">
+          <img class="slides2" src="images/Danskebank5.png" style="width:100%">
+          <img class="slides2" src="images/Danskebank6.png" style="width:100%">
+          <img class="slides2" src="images/Danskebank7.png" style="width:100%">
+          <img class="slides2" src="images/Danskebank8.png" style="width:100%">
+          <div class="w3-row-padding w3-section" style="text-align: center;">
+            <div style="display: inline-block">
+
+              <div class="w3-col s3">
+                <img class="dots2 w3-opacity w3-hover-opacity-off thumb" src="images/Danskebank1.png" style="width:100%;cursor:pointer" onclick="currentDiv(1, 2)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots2 w3-opacity w3-hover-opacity-off thumb" src="images/Danskebank2.png" style="width:100%;cursor:pointer" onclick="currentDiv(2, 2)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots2 w3-opacity w3-hover-opacity-off thumb" src="images/Danskebank3.png" style="width:100%;cursor:pointer" onclick="currentDiv(3, 2)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots2 w3-opacity w3-hover-opacity-off thumb" src="images/Danskebank4.png" style="width:100%;cursor:pointer" onclick="currentDiv(4, 2)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots2 w3-opacity w3-hover-opacity-off thumb" src="images/Danskebank5.png" style="width:100%;cursor:pointer" onclick="currentDiv(5, 2)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots2 w3-opacity w3-hover-opacity-off thumb" src="images/Danskebank6.png" style="width:100%;cursor:pointer" onclick="currentDiv(6, 2)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots2 w3-opacity w3-hover-opacity-off thumb" src="images/Danskebank7.png" style="width:100%;cursor:pointer" onclick="currentDiv(7, 2)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots2 w3-opacity w3-hover-opacity-off thumb" src="images/Danskebank8.png" style="width:100%;cursor:pointer" onclick="currentDiv(8, 2)">
+              </div>
+
+
+            </div>
+         </div>
+
+          <p><b>Danske Bank – Pilotprojekt med BIG</b></p>
+          <p>Sommaren 2013 blev jag uppringd av det danska arkitektkontoret BIG som undrade om jag kunde vara deras lokala arkitekt i ett hemligt pilotprojekt som gick ut p&aring; att skapa en helt ny inredningsprofil f&ouml;r hela Danske Banks koncern och alla deras bankkontor &ouml;ver hela v&auml;rlden. Tv&aring; bankkontor skulle byggas om och inredas in i minsta detalj enligt det nya konceptet f&ouml;r att sedan utv&Auml;rderas. Ett l&aring;g i Trondheim och det andra p&aring; Flemminggatan i Stockholm. Klart att jag sa ja! Att de ringde just mig var f&ouml;r att lokalen, som ligger i Trygg Hansa-huset, f&ouml;rvaltas av Aberdeen Asset som jag gjort m&aring;nga hyresg&auml;stanpassningar &aring;t och handl&auml;ggaren p&aring; BIG hade fr&aring;gad Aberdeens lokalansvarige om hon kunde rekommendera n&aring;gon arkitekt i Stockholm och hon rekommenderade mig. Roligt!</p>
+
+          <p>F&ouml;rutom att hj&auml;lpa till att granska s&aring; allt &ouml;verensst&auml;mde med svenska krav enligt BBR och h&aring;lla kontakter med Stadsbyggnadskontoret s&aring; var jag p&aring; bygget flera g&aring;nger i veckan och besiktigade alla material och allt montage. I Danmark har arkitekter en mer &ouml;vergripande roll &auml;n i Sverige och det var intressant att f&aring; testa p&aring; det s&auml;ttet att arbeta. Min roll var enbart som platsansvarig och typ Sverige-anpassare, allt arkitektoniskt arbete med utformning mm &auml;r utf&ouml;rt av BIG. Det var ett kul projekt att jobba med &auml;ven om det blev b&aring;de helger och kv&auml;llar eftersom jag f&ouml;rv&auml;ntades vara tillg&Auml;nglig mer eller mindre hela tiden. En tid efter&aring;t s&aring; &aring;terkom Danske Bank till mig med ett eget frist&aring;ende uppdrag som g&auml;llde en ombyggnad av ett mindre kontor i anslutning till detta pilotprojekt och det var ju ocks&aring; kul.</p>
+
+          <p>Uppdragsgivare: BIG<br/>
+          Foton: mina egna</p>
+
+      </div>
+    </div>
+  </div> <!-- end of danskebank -->
+
+
+  <div id="pyramiden" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('pyramiden')">&times;</span>
+      <div class="w3-content w3-display-container">
+          <img class="slides3" src="images/Pyramiden1.png" style="width:100%">
+          <img class="slides3" src="images/Pyramiden2.png" style="width:100%">
+          <img class="slides3" src="images/Pyramiden3.png" style="width:100%">
+          <img class="slides3" src="images/Pyramiden4.png" style="width:100%">
+          <img class="slides3" src="images/Pyramiden5.png" style="width:100%">
+          <img class="slides3" src="images/Pyramiden6.png" style="width:100%">
+          <img class="slides3" src="images/Pyramiden7.png" style="width:100%">
+          <img class="slides3" src="images/Pyramiden8.png" style="width:100%">
+          <div class="w3-row-padding w3-section" style="text-align: center;">
+            <div style="display: inline-block">
+
+              <div class="w3-col s3">
+                <img class="dots3 w3-opacity w3-hover-opacity-off thumb" src="images/Pyramiden1.png" style="width:100%;cursor:pointer" onclick="currentDiv(1, 3)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots3 w3-opacity w3-hover-opacity-off thumb" src="images/Pyramiden2.png" style="width:100%;cursor:pointer" onclick="currentDiv(2, 3)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots3 w3-opacity w3-hover-opacity-off thumb" src="images/Pyramiden3.png" style="width:100%;cursor:pointer" onclick="currentDiv(3, 3)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots3 w3-opacity w3-hover-opacity-off thumb" src="images/Pyramiden4.png" style="width:100%;cursor:pointer" onclick="currentDiv(4, 3)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots3 w3-opacity w3-hover-opacity-off thumb" src="images/Pyramiden5.png" style="width:100%;cursor:pointer" onclick="currentDiv(5, 3)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots3 w3-opacity w3-hover-opacity-off thumb" src="images/Pyramiden6.png" style="width:100%;cursor:pointer" onclick="currentDiv(6, 3)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots3 w3-opacity w3-hover-opacity-off thumb" src="images/Pyramiden7.png" style="width:100%;cursor:pointer" onclick="currentDiv(7, 3)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots3 w3-opacity w3-hover-opacity-off thumb" src="images/Pyramiden8.png" style="width:100%;cursor:pointer" onclick="currentDiv(8, 3)">
+              </div>
+
+
+            </div>
+         </div>
+
+            <p><b>SEB:s huvudkontor i Solna</b></p>
+            <p>Detta &auml;r ett av de allra st&ouml;rsta projekten jag har jobbat med under min tid som anst&auml;lld p&aring; Krook &amp; Tj&auml;der, 96 000 m2 kontor med arbetsplats f&ouml;r 4500 personer. Min roll var som handl&auml;ggare f&ouml;r alla ytor utom de egentliga kontorsv&aring;ningarna vilket innebar: bankkontor, konferensanl&auml;ggning, tv&aring; stora atrier, flera restauranger, vaktcentral, gym, garage, lastfar mm. Det var ett b&aring;de utmanande och utvecklande arbete under stor press. Det roligaste var all samordning mellan alla olika akt&ouml;rer i projekteringsprocessen, &auml;ven alla s&auml;kerhetsfr&aring;gor var sp&auml;nnande men jag vill aldrig mer jobba med s&aring; stora projekt med s&aring; tajta tidplaner.</p>
+
+            <p>Uppdragsgivare: Veidekke<br/> 
+            Bilder: renderingar Krook &amp; Tj&auml;der, foton mina egna</p>
+
+      </div>
+    </div>
+  </div> <!-- end of pyramiden -->
+
+
+  <div id="ulriksdal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('ulriksdal')">&times;</span>
+      <div class="w3-content w3-display-container">
+          <img class="slides4" src="images/Ulriksdalsskolan1.png" style="width:100%">
+          <img class="slides4" src="images/Ulriksdalsskolan2.png" style="width:100%">
+          <img class="slides4" src="images/Ulriksdalsskolan3.png" style="width:100%">
+          <img class="slides4" src="images/Ulriksdalsskolan4.png" style="width:100%">
+          <img class="slides4" src="images/Ulriksdalsskolan5.png" style="width:100%">
+          <img class="slides4" src="images/Ulriksdalsskolan6.png" style="width:100%">
+          <img class="slides4" src="images/Ulriksdalsskolan7.png" style="width:100%">
+          <img class="slides4" src="images/Ulriksdalsskolan8.png" style="width:100%">
+          <div class="w3-row-padding w3-section" style="text-align: center;">
+            <div style="display: inline-block">
+
+              <div class="w3-col s3">
+                <img class="dots4 w3-opacity w3-hover-opacity-off thumb" src="images/Ulriksdalsskolan1.png" style="width:100%;cursor:pointer" onclick="currentDiv(1, 4)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots4 w3-opacity w3-hover-opacity-off thumb" src="images/Ulriksdalsskolan2.png" style="width:100%;cursor:pointer" onclick="currentDiv(2, 4)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots4 w3-opacity w3-hover-opacity-off thumb" src="images/Ulriksdalsskolan3.png" style="width:100%;cursor:pointer" onclick="currentDiv(3, 4)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots4 w3-opacity w3-hover-opacity-off thumb" src="images/Ulriksdalsskolan4.png" style="width:100%;cursor:pointer" onclick="currentDiv(4, 4)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots4 w3-opacity w3-hover-opacity-off thumb" src="images/Ulriksdalsskolan5.png" style="width:100%;cursor:pointer" onclick="currentDiv(5, 4)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots4 w3-opacity w3-hover-opacity-off thumb" src="images/Ulriksdalsskolan6.png" style="width:100%;cursor:pointer" onclick="currentDiv(6, 4)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots4 w3-opacity w3-hover-opacity-off thumb" src="images/Ulriksdalsskolan7.png" style="width:100%;cursor:pointer" onclick="currentDiv(7, 4)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots4 w3-opacity w3-hover-opacity-off thumb" src="images/Ulriksdalsskolan8.png" style="width:100%;cursor:pointer" onclick="currentDiv(8, 4)">
+              </div>
+
+
+            </div>
+         </div>
+
+            <p><b>Ulriksdalsskolan</b></p>
+            <p>I detta projekt fick jag chansen att g&ouml;ra b&aring;de all inv&auml;ndig f&auml;rgs&auml;ttning och all l&ouml;s inredning. J&auml;tteroligt! Det var n&auml;r jag var anst&auml;lld p&aring; Krook &amp; Tj&auml;der som d&aring; hade ramavtal med Solna stad. Ulriksdalsskolan &auml;r ritad av Visbyark men byggprojekteringen utf&ouml;rdes av Semr&eacute;n M&aring;nsson och jag kom in i projektet n&auml;r bygget precis hade kommit ig&aring;ng.</p>
+
+            <p>Att f&aring; g&ouml;ra all inre f&auml;rgs&auml;ttning, med b&aring;de fast och l&ouml;s inredning gav en fantastisk m&ouml;jlighet att f&aring; allt att samspela. Sedan fick jag ocks&aring; vara med och st&ouml;tta Solna stad genom hela upphandlingsprocessen med den offentliga upphandlingen av alla m&ouml;bler, lampor, gardiner och snickarb&auml;nkar och allt m&ouml;jligt. V&auml;ldigt l&auml;rorikt! Och vad som &auml;r allra roligast &auml;r att jag f&aring;tt s&aring; positiv respons fr&aring;n personalen i skolan efter&aring;t &#128515; </p>
+
+            <p>Uppdragsgivare: Solna stad<br/>
+            Foton: mina egna</p>
+
+
+      </div>
+    </div>
+  </div> <!-- end of ulriksdal -->
+
+
+  <div id="solna" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('solna')">&times;</span>
+      <div class="w3-content w3-display-container">
+          <img class="slides5" src="images/SolnaSoc1.png" style="width:100%">
+          <img class="slides5" src="images/SolnaSoc2.png" style="width:100%">
+          <img class="slides5" src="images/SolnaSoc3.png" style="width:100%">
+          <img class="slides5" src="images/SolnaSoc4.png" style="width:100%">
+          <img class="slides5" src="images/SolnaSoc5.png" style="width:100%">
+          <img class="slides5" src="images/SolnaSoc6.png" style="width:100%">
+          <div class="w3-row-padding w3-section" style="text-align: center;">
+            <div style="display: inline-block">
+
+              <div class="w3-col s3">
+                <img class="dots5 w3-opacity w3-hover-opacity-off thumb" src="images/SolnaSoc1.png" style="width:100%;cursor:pointer" onclick="currentDiv(1, 5)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots5 w3-opacity w3-hover-opacity-off thumb" src="images/SolnaSoc2.png" style="width:100%;cursor:pointer" onclick="currentDiv(2, 5)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots5 w3-opacity w3-hover-opacity-off thumb" src="images/SolnaSoc3.png" style="width:100%;cursor:pointer" onclick="currentDiv(3, 5)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots5 w3-opacity w3-hover-opacity-off thumb" src="images/SolnaSoc4.png" style="width:100%;cursor:pointer" onclick="currentDiv(4, 5)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots5 w3-opacity w3-hover-opacity-off thumb" src="images/SolnaSoc5.png" style="width:100%;cursor:pointer" onclick="currentDiv(5, 5)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots5 w3-opacity w3-hover-opacity-off thumb" src="images/SolnaSoc6.png" style="width:100%;cursor:pointer" onclick="currentDiv(6, 5)">
+              </div>
+
+            </div>
+         </div>
+
+          <p><b>Solna stad</b></p>
+          <p>Under &aring;ren som Krook &amp; Tj&auml;der hade ramavtal med Solna stad s&aring; arbetade jag med ett flertal ombyggnader och inredningsuppdrag, framf&ouml;rallt i Solna stadshus och olika skolor och f&ouml;rskolor men &auml;ven andra av Solna stads byggnader. Bilderna h&auml;r visar inredningen av Solna socialkontor.</p>
+
+          <p>Uppdragsgivare: Solna stad<br/>
+          Foton: mina egna</p>
+
+
+      </div>
+    </div>
+  </div> <!-- end of solna -->
+
+  <div id="sture" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('sture')">&times;</span>
+      <div class="w3-content w3-display-container">
+          <img class="slides6" src="images/Sture1.png" style="width:100%">
+          <img class="slides6" src="images/Sture2.png" style="width:100%">
+          <img class="slides6" src="images/Sture3.png" style="width:100%">
+          <img class="slides6" src="images/Sture4.png" style="width:100%">
+          <div class="w3-row-padding w3-section" style="text-align: center;">
+            <div style="display: inline-block">
+
+              <div class="w3-col s3">
+                <img class="dots6 w3-opacity w3-hover-opacity-off thumb" src="images/Sture1.png" style="width:100%;cursor:pointer" onclick="currentDiv(1, 6)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots6 w3-opacity w3-hover-opacity-off thumb" src="images/Sture2.png" style="width:100%;cursor:pointer" onclick="currentDiv(2, 6)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots6 w3-opacity w3-hover-opacity-off thumb" src="images/Sture3.png" style="width:100%;cursor:pointer" onclick="currentDiv(3, 6)">
+              </div>
+              <div class="w3-col s3">
+                <img class="dots6 w3-opacity w3-hover-opacity-off thumb" src="images/Sture4.png" style="width:100%;cursor:pointer" onclick="currentDiv(4, 6)">
+              </div>
+
+            </div>
+         </div>
+
+            <p><b>Sturev&auml;gen</b></p>
+            <p>Sturev&auml;gen &auml;r ett helt bostadskvarter i Jakobsberg utanf&ouml;r Stockholm som jag jobbade med under min anst&auml;llning hos Krook &amp; Tj&auml;der. Byggnaderna best&aring;r av 87 l&auml;genheter f&ouml;rdelade i olika byggnadskroppar med b&aring;de h&ouml;ga hus och stadsradhus. Jag var utformningsansvarig arkitekt genom hela skiss- och f&ouml;rfr&aring;gningsunderlags-skedet. Ett mycket roligt projekt med trevliga best&auml;llare och j&auml;ttebra kollegor.</p>
+
+            <p>Uppdragsgivare: Skandia Fastigheter<br/>
+            Bilder: renderingar Krook &amp; Tj&auml;der<br/> 
+            Foton: mina egna</p>
+
+      </div>
+    </div>
+  </div> <!-- end of solna -->
+
+
+  <div id="avail" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('avail')">&times;</span>
+      <div class="w3-content w3-display-container">
+          <img class="slides7" src="images/Avail1.png" style="width:100%">
+          <div class="w3-row-padding w3-section" style="text-align: center;">
+            <div style="display: inline-block">
+
+             <div class="w3-col s6">
+                <img class="dots7 w3-opacity w3-hover-opacity-off thumb" src="images/Avail1.png" style="width:100%;cursor:pointer" onclick="currentDiv(1, 7)">
+              </div>
+
+
+            </div>
+          </div>
+      </div>
+
+        <p><b>Tillg&auml;nglighet</b></p>
+        <p>Jag gick min f&ouml;rsta tillg&auml;nglighetsutbildning 2008 och har jobbat med tillg&auml;nglighetsfr&aring;gor sedan dess vid sidan av min roll som projekterande arkitekt. Mest som intern projektgranskare f&ouml;rst p&aring; Berg Arkitektkontor/CF M&ouml;ller och sedan p&aring; Krook och Tj&auml;der men jag har &auml;ven gjort granskningar och skrivit granskningsutl&aring;tanden &aring;t utomst&aring;ende projekt.</p>
+
+        <p>Mitt st&ouml;rsta uppdrag har varit Friends Arena d&auml;r jag var tillg&auml;nglighetsansvarig f&ouml;r hela projektet men jag har granskat allt fr&aring;n bost&auml;der, kyrkorum, kontor, shoppingcenter och skolor. Jag har ocks&aring; gjort en tillg&auml;nglighetsgenomg&aring;ng av Globen inf&ouml;r Globens 25-&aring;rs jubileum.</p>
+
+        <p>N&auml;r jag startade med tillg&auml;nglighet hade man inte b&ouml;rjat certifiera sakkunniga &auml;nnu och d&aring; jag huvudsakligen gjorde annat s&aring; prioriterade inte jag att g&ouml;ra det n&auml;r m&ouml;jligheten uppstod men nu n&auml;r jag &auml;r egen s&aring; st&aring;r det p&aring; att-g&ouml;ra-listan. Under tiden s&aring; samarbetar jag med Staremo Tillg&auml;nglighetskonsult AB som drivs av Joachim Staremo som &auml;r certifierad och har stor erfarenhet. Kul och l&auml;rorikt.</p>
+
+        <p>Bild: Digitala stadsmuseet, Stockholms stad</p>
+
+
+    </div>
+  </div> <!-- end of avail -->
+
+
+
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-left w3-padding-16" style="width: 100%; cursor: default; background-color: #3B4F51" id="contact">
+
+  <img src="images/RekoarkFooter.png" style="width: 275px; height: 140px; padding: 20px; ">
+
+</footer>
+
+</body>
+</html>
