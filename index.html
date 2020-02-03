@@ -51,6 +51,24 @@ function showDivs(n, no) {
   dots[slideIndex[no]-1].className += " w3-opacity-off";
 }
 
+function toggle(div) {
+  var x = document.getElementById(div);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function togggleclass(cl, id) {
+  var x = document.getElementsByClassName(cl);
+  var y = document.getElementById(id);
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  y.style.display = "block";
+}
+
 </script>
 <style type="text/css">
 
@@ -65,9 +83,19 @@ html {
   font-size: 14px;
   color: rgba(0,0,0,1);  
   /*text-shadow: 3px 3px 5px #000000;*/
-  background-color: rgba(0,0,0,0);
+  /*background-color: rgba(0,0,0,0);*/
   overflow: hidden;
   border: 1px solid #FFFFFF;
+}
+
+#deftext {
+  border: 1px solid #AAAAAA; 
+  padding: 10px; width: 50%; 
+  margin-top: 15px; 
+  border-radius: 5px; 
+  background-color: rgba(135,169,155,0.4);
+  color: #000;
+
 }
 
 .pagecol {
@@ -165,7 +193,8 @@ html {
 
 <!-- Main Content -->
   <div class="w3-container w3-padding-32" id="quote">
-    <div style="border: 1px solid #AAAAAA; padding: 10px; width: 50%; margin-top: 15px; border-radius: 5px; background-color: #FFFFFF">
+    <!--<div style="border: 1px solid #AAAAAA; padding: 10px; width: 50%; margin-top: 15px; border-radius: 5px; background-color: #345D79; color: #FFFFFF">-->
+    <div id="deftext">
     <p>
       <b>Svenska Akademiens ordlista:</b><br/>
       reko [re&acute;ko] ob&ouml;jligt adjektiv &#9679; &#10216;vard.&#10217; rekorderlig, rej&auml;l
@@ -186,7 +215,8 @@ html {
   <!-- About Section -->
   <div class="w3-container w3-padding-32" id="about">
     <!--<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Om Rekoark</h3>-->
-    <p>V&auml;lkommen till Rekoark! Kul att du hittat hit.</p>
+    <!--<p><b>V&auml;lkommen till Rekoark! Kul att du hittat hit.</b></p>-->
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">V&auml;lkommen till Rekoark! Kul att du hittat hit.</h3>
     <p>
       Rekoark &auml;r ett litet nystartat arkitektkontor som i f&ouml;rsta hand fokuserar p&aring; byggnadsv&aring;rd och h&aring;llbart byggande.
       Jag som driver Rekoark heter Susan Hende och jag hj&auml;lper dig g&auml;rna med skisser, bygglovshandlingar, bygghandlingar, f&auml;rgs&auml;ttning eller kanske bara bollplankning av olika idéer om alternativa material och planl&ouml;sningar. Ut&ouml;ver det s&aring; kan jag ocks&aring; g&ouml;ra tillg&auml;nglighetsgranskningar och skriva utl&aring;tanden.
@@ -210,6 +240,13 @@ html {
                 Jag har flera utbildningar inom byggnadsv&aring;rd och h&aring;llbart byggande (som ju har m&aring;nga paralleller) och jag har &auml;ven haft egna privata byggnadsv&aring;rdsprojekt. I nul&auml;get h&aring;ller min man och jag p&aring; att renovera ett 1870-talshus p&aring; Gotland med en blandning av traditionella tekniker och lerbygge. 
               </p>
               <p>Om du väljer mig som arkitekt kommer jag alltid att i f&ouml;rsta hand f&ouml;resl&aring; milj&ouml;v&auml;nliga och h&aring;llbara material och metoder.</p>
+              <br/>
+              <p><i>
+                Susan Hende<br/>
+                Arkitekt SAR/MSA<br/>
+                Behörig Kulturbyggnader<br/>
+                Medlem i Nätverk för Byggnadsvård på Gotland<br/></i>
+              </p>
 
 
             </div>
@@ -224,19 +261,57 @@ html {
 
 
     <br/>
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" >
+      <span style="cursor: pointer; font-size: 20px; display: block" onclick="toggle('cv');togggleclass('tri', 'up')" class="tri" id="down" style="display: block">CV &#9660;</span>
+      <span style="cursor: pointer; font-size: 20px; display: none" onclick="toggle('cv');togggleclass('tri', 'down')" class="tri" id="up" style="display: block">CV &#9650;</span>
+    </h3>
+    <div id="cv" style="display: none">
 
-      <p><b>Utbildningar</b></p>
-      <p>1997-1998 Byggnadsrestaurering och Kulturmilj&ouml;v&aring;rd<br/>H&ouml;gskolan p&aring; Gotland, Visby</p>
-      <p>1986-1991 Arkitekt<br/>Chalmers, G&ouml;teborg</p>
-      
-      <p><b>Kurser</b></p>
-      <p>2018  Beh&ouml;rig Kulturbyggnader<br/>Byggnadsv&aring;rdsf&ouml;retagen</p>
-      <p>2017  Milj&ouml;byggnad baskurs 3.0<br/>SGBC</p>
-      <p>2017  Kulturv&auml;rden i plan- och bygglovprocessen<br/>Approvus</p>
-      <p>2016  Milj&ouml;byggnad baskurs<br/>SGBC</p>
-      <p>2014  Tillg&auml;nglighet<br/>BFAB, Stockholm</p>
-      <p>2008  Tillg&auml;nglighet, grundkurs<br/>BFAB, Stockholm</p>
 
+       <div class="w3-row-padding">
+          <div class="w3-col l6 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                  
+              <p><b>Utbildningar</b></p>
+              <p>1997-1998 Byggnadsrestaurering och Kulturmilj&ouml;v&aring;rd<br/>H&ouml;gskolan p&aring; Gotland, Visby</p>
+              <p>1986-1991 Arkitekt<br/>Chalmers, G&ouml;teborg</p>
+              
+              <p><b>Kurser</b></p>
+              <p>2018  Beh&ouml;rig Kulturbyggnader<br/>Byggnadsv&aring;rdsf&ouml;retagen</p>
+              <p>2017  Milj&ouml;byggnad baskurs 3.0<br/>SGBC</p>
+              <p>2017  Kulturv&auml;rden i plan- och bygglovprocessen<br/>Approvus</p>
+              <p>2016  Milj&ouml;byggnad baskurs<br/>SGBC</p>
+              <p>2014  Tillg&auml;nglighet<br/>BFAB, Stockholm</p>
+              <p>2008  Tillg&auml;nglighet, grundkurs<br/>BFAB, Stockholm</p>
+
+            </div>
+          </div>
+          <div class="w3-col l6 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+
+              <p><b>Anst&auml;llningar</b></p>
+              <p>2019 Rekoark Susan Hende AB<br/>
+              Egen verksamhet, Stockholm/Visby</p>
+              <p>2011-2019  Arkitekterna Krook &amp; Tj&auml;der<br/>
+              Ansvarig och handl&auml;ggande arkitekt, Stockholm</p>
+              <p>2007-2011  Berg Arkitektkontor AB/CF M&ouml;ller<br/>
+              Handl&auml;ggande och medverkande arkitekt, Stockholm</p>
+              <p>2005-2007  Stadsarkitektkontoret i &ouml;ster&aring;ker<br/>
+              Planarkitekt, &Aring;kersberga</p>
+              <p>2004 Stiftelsen Alnarps Studentbost&auml;der<br/>
+              Projektledare/handl&auml;ggande arkitekt, Lomma</p>
+              <p>2000-2003  BJ-Konsult AB<br/>
+              Handl&auml;ggande arkitekt, Visby</p>
+              <p>1998-1999  Jansson & Landahl Arkitekter AB<br/>
+              Medverkande arkitekt, Visby</p>
+              <p>1998 L&auml;nsstyrelsen p&aring; Gotland<br/>
+              Byggnadsantikvarieassistent, Visby</p>
+
+            </div>
+          </div>
+      </div>
+
+    </div> <!-- end cv-->
 
   </div>
 
@@ -258,9 +333,9 @@ html {
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container" onclick="openModal('arenan');showDivs(1, 1)">
-        <div class="w3-display-topleft w3-black w3-padding">Friends arena</div>
-        <img src="images/Arenan1.png" alt="House" style="width:100%">
+      <div class="w3-display-container" onclick="openModal('sture');showDivs(1, 6)">
+        <div class="w3-display-topleft w3-black w3-padding">Sturev&auml;gen</div>
+        <img src="images/Sture1.png" alt="House" style="width:99%">
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
@@ -291,9 +366,9 @@ html {
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container" onclick="openModal('sture');showDivs(1, 6)">
-        <div class="w3-display-topleft w3-black w3-padding">Sturev&auml;gen</div>
-        <img src="images/Sture1.png" alt="House" style="width:99%">
+      <div class="w3-display-container" onclick="openModal('arenan');showDivs(1, 1)">
+        <div class="w3-display-topleft w3-black w3-padding">Friends arena</div>
+        <img src="images/Arenan1.png" alt="House" style="width:100%">
       </div>
     </div>
     <div class="w3-col l3 m6 w3-margin-bottom">
@@ -308,9 +383,8 @@ html {
   <div id="ala" class="modal">
     <!-- Modal content -->
     <div class="modal-content">      
-      <span class="close" onclick="closeModal('ala')">&times;</span>
       <div class="w3-content w3-display-container">
-          <!--<span class="w3-display-topright close" onclick="closeModal('ala')">&nbsp;&times;&nbsp;</span>-->
+          <span class="w3-display-topright close" onclick="closeModal('ala')">&nbsp;&times;&nbsp;</span>
           <img class="slides0" src="images/Ala1.png" style="width:100%">
           <img class="slides0" src="images/Ala2.png" style="width:100%">
           <img class="slides0" src="images/Ala3.png" style="width:100%">
@@ -351,8 +425,8 @@ html {
   <div id="arenan" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
-      <span class="close" onclick="closeModal('arenan')">&times;</span>
       <div class="w3-content w3-display-container">
+          <span class="w3-display-topright close" onclick="closeModal('arenan')">&nbsp;&times;&nbsp;</span>
           <img class="slides1" src="images/Arenan1.png" style="width:100%">
           <img class="slides1" src="images/Arenan2.png" style="width:100%">
           <div class="w3-row-padding w3-section" style="text-align: center;">
@@ -384,8 +458,8 @@ html {
   <div id="danskebank" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
-      <span class="close" onclick="closeModal('danskebank')">&times;</span>
       <div class="w3-content w3-display-container">
+          <span class="w3-display-topright close" onclick="closeModal('danskebank')">&nbsp;&times;&nbsp;</span>
           <img class="slides2" src="images/Danskebank1.png" style="width:100%">
           <img class="slides2" src="images/Danskebank2.png" style="width:100%">
           <img class="slides2" src="images/Danskebank3.png" style="width:100%">
@@ -442,8 +516,8 @@ html {
   <div id="pyramiden" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
-      <span class="close" onclick="closeModal('pyramiden')">&times;</span>
       <div class="w3-content w3-display-container">
+          <span class="w3-display-topright close" onclick="closeModal('pyramiden')">&nbsp;&times;&nbsp;</span>
           <img class="slides3" src="images/Pyramiden1.png" style="width:100%">
           <img class="slides3" src="images/Pyramiden2.png" style="width:100%">
           <img class="slides3" src="images/Pyramiden3.png" style="width:100%">
@@ -498,8 +572,8 @@ html {
   <div id="ulriksdal" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
-      <span class="close" onclick="closeModal('ulriksdal')">&times;</span>
       <div class="w3-content w3-display-container">
+          <span class="w3-display-topright close" onclick="closeModal('ulriksdal')">&nbsp;&times;&nbsp;</span>
           <img class="slides4" src="images/Ulriksdalsskolan1.png" style="width:100%">
           <img class="slides4" src="images/Ulriksdalsskolan2.png" style="width:100%">
           <img class="slides4" src="images/Ulriksdalsskolan3.png" style="width:100%">
@@ -557,8 +631,8 @@ html {
   <div id="solna" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
-      <span class="close" onclick="closeModal('solna')">&times;</span>
       <div class="w3-content w3-display-container">
+          <span class="w3-display-topright close" onclick="closeModal('solna')">&nbsp;&times;&nbsp;</span>
           <img class="slides5" src="images/SolnaSoc1.png" style="width:100%">
           <img class="slides5" src="images/SolnaSoc2.png" style="width:100%">
           <img class="slides5" src="images/SolnaSoc3.png" style="width:100%">
@@ -604,8 +678,8 @@ html {
   <div id="sture" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
-      <span class="close" onclick="closeModal('sture')">&times;</span>
       <div class="w3-content w3-display-container">
+          <span class="w3-display-topright close" onclick="closeModal('sture')">&nbsp;&times;&nbsp;</span>
           <img class="slides6" src="images/Sture1.png" style="width:100%">
           <img class="slides6" src="images/Sture2.png" style="width:100%">
           <img class="slides6" src="images/Sture3.png" style="width:100%">
@@ -644,8 +718,8 @@ html {
   <div id="avail" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
-      <span class="close" onclick="closeModal('avail')">&times;</span>
       <div class="w3-content w3-display-container">
+          <span class="w3-display-topright close" onclick="closeModal('avail')">&nbsp;&times;&nbsp;</span>
           <img class="slides7" src="images/Avail1.png" style="width:100%">
           <div class="w3-row-padding w3-section" style="text-align: center;">
             <div style="display: inline-block">
