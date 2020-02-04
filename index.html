@@ -22,8 +22,7 @@ function closeModal(d) {
 var slideIndex = [1,1,1,1,1,1,1,1,1];
 var slideId = ["slides0", "slides1", "slides2", "slides3", "slides4", "slides5", "slides6", "slides7", "slides8"]
 var dotId = ["dots0", "dots1", "dots2", "dots3", "dots4", "dots5", "dots6", "dots7", "dots8"]
-//showDivs(1, 0);
-//showDivs(1, 1);
+
 
 function plusDivs(n, no) {
   showDivs(slideIndex[no] += n, no);
@@ -73,7 +72,6 @@ function togggleclass(cl, id) {
 <style type="text/css">
 
 html {
-  /*background-color: rgba(50,90,50,1);*/
   background-color: #87A99B;
 }
 
@@ -100,7 +98,7 @@ html {
 }
 
 @media only screen and (max-width: 760px) {
-  #deftext { width: 100%; }
+  #deftext { display: none; /*remove on mobile*/ }
   #bannerpic {margin-top: 20px; }
 }
 
@@ -172,7 +170,6 @@ html {
     <a href="#home" class="w3-bar-item w3-button">REKOARK</a>
     <!-- Float links to the right. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
-      <!--<a href="#about" class="w3-bar-item w3-button">Om Rekoark</a>-->
       <a href="#aboutme" class="w3-bar-item w3-button">Om mig</a>
       <a href="#projects" class="w3-bar-item w3-button">Projekt</a>
       <a href="#contact" class="w3-bar-item w3-button">Kontakt</a>
@@ -198,7 +195,6 @@ html {
 
 <!-- Main Content -->
   <div class="w3-container w3-padding-32" id="quote">
-    <!--<div style="border: 1px solid #AAAAAA; padding: 10px; width: 50%; margin-top: 15px; border-radius: 5px; background-color: #345D79; color: #FFFFFF">-->
     <div id="deftext">
     <p>
       <b>Svenska Akademiens ordlista:</b><br/>
@@ -218,9 +214,7 @@ html {
   </div>
   </div>
   <!-- About Section -->
-  <div class="w3-container w3-padding-32" id="about">
-    <!--<h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Om Rekoark</h3>-->
-    <!--<p><b>V&auml;lkommen till Rekoark! Kul att du hittat hit.</b></p>-->
+  <div class="w3-container w3-padding-32">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">V&auml;lkommen till Rekoark! Kul att du hittat hit.</h3>
     <p>
       Rekoark &auml;r ett litet nystartat arkitektkontor som i f&ouml;rsta hand fokuserar p&aring; byggnadsv&aring;rd och h&aring;llbart byggande.
@@ -229,40 +223,47 @@ html {
   </div>
 
   <div class="w3-container w3-padding-32" id="aboutme">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Om mig</h3>
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">
+      <span style="cursor: pointer; font-size: 20px; display: block" onclick="toggle('me');togggleclass('metri', 'meup')" class="metri" id="medown" style="display: block">Om mig &#9660;</span>
+      <span style="cursor: pointer; font-size: 20px; display: none" onclick="toggle('me');togggleclass('metri', 'medown')" class="metri" id="meup" style="display: block">Om mig &#9650;</span>
+    </h3>
 
-       <div class="w3-row-padding">
-          <div class="w3-col l6 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-              
-              <p>
-                Jag &auml;r en erfaren arkitekt som tidigare huvudsakligen jobbat med vanliga kommersiella projekt; flerfamiljshus, v&aring;rdbyggnader och kontor samt detaljplaner. Jag har ocks&aring; varit handl&auml;ggare i tv&aring; riktigt stora projekt; Friends arenas entré- och konferensbyggnad samt SEB:s nya huvudkontor p&aring; 96 000 kvm. Ut&ouml;ver det s&aring; har jag gjort en del inredningar och f&auml;rgs&auml;ttningar samt jobbat mycket med tillg&auml;nglighet.
-              </p>
-              <p>
-                F&ouml;r n&aring;gra &aring;r sedan, efter flera v&auml;ldigt stressiga &aring;r, s&aring; drabbades jag av utmattningssyndrom och har efter det f&ouml;rs&ouml;kt hitta en b&auml;ttre balans i vardagen. Ett s&auml;tt att f&aring; b&auml;ttre kontroll &ouml;ver min arbetssituation var att s&auml;ga upp mig och starta eget f&ouml;r att kunna jobba med de fr&aring;gor som intresserar mig mest: byggnadsv&aring;rd och h&aring;llbart byggande.  
-              </p>
-              <p>
-                Jag har flera utbildningar inom byggnadsv&aring;rd och h&aring;llbart byggande (som ju har m&aring;nga paralleller) och jag har &auml;ven haft egna privata byggnadsv&aring;rdsprojekt. I nul&auml;get h&aring;ller min man och jag p&aring; att renovera ett 1870-talshus p&aring; Gotland med en blandning av traditionella tekniker och lerbygge. 
-              </p>
-              <p>Om du väljer mig som arkitekt kommer jag alltid att i f&ouml;rsta hand f&ouml;resl&aring; milj&ouml;v&auml;nliga och h&aring;llbara material och metoder.</p>
-              <br/>
-              <p><i>
-                Susan Hende<br/>
-                Arkitekt SAR/MSA<br/>
-                Behörig Kulturbyggnader<br/>
-                Medlem i Nätverk för Byggnadsvård på Gotland<br/></i>
-              </p>
+       <div id="me" style="display: none">
+
+         <div class="w3-row-padding">
+            <div class="w3-col l6 m6 w3-margin-bottom">
+              <div class="w3-display-container">
+                
+                <p>
+                  Jag &auml;r en erfaren arkitekt som tidigare huvudsakligen jobbat med vanliga kommersiella projekt; flerfamiljshus, v&aring;rdbyggnader och kontor samt detaljplaner. Jag har ocks&aring; varit handl&auml;ggare i tv&aring; riktigt stora projekt; Friends arenas entré- och konferensbyggnad samt SEB:s nya huvudkontor p&aring; 96 000 kvm. Ut&ouml;ver det s&aring; har jag gjort en del inredningar och f&auml;rgs&auml;ttningar samt jobbat mycket med tillg&auml;nglighet.
+                </p>
+                <p>
+                  F&ouml;r n&aring;gra &aring;r sedan, efter flera v&auml;ldigt stressiga &aring;r, s&aring; drabbades jag av utmattningssyndrom och har efter det f&ouml;rs&ouml;kt hitta en b&auml;ttre balans i vardagen. Ett s&auml;tt att f&aring; b&auml;ttre kontroll &ouml;ver min arbetssituation var att s&auml;ga upp mig och starta eget f&ouml;r att kunna jobba med de fr&aring;gor som intresserar mig mest: byggnadsv&aring;rd och h&aring;llbart byggande.  
+                </p>
+                <p>
+                  Jag har flera utbildningar inom byggnadsv&aring;rd och h&aring;llbart byggande (som ju har m&aring;nga paralleller) och jag har &auml;ven haft egna privata byggnadsv&aring;rdsprojekt. I nul&auml;get h&aring;ller min man och jag p&aring; att renovera ett 1870-talshus p&aring; Gotland med en blandning av traditionella tekniker och lerbygge. 
+                </p>
+                <p>Om du väljer mig som arkitekt kommer jag alltid att i f&ouml;rsta hand f&ouml;resl&aring; milj&ouml;v&auml;nliga och h&aring;llbara material och metoder.</p>
+                <br/>
+                <p><i>
+                  Susan Hende<br/>
+                  Arkitekt SAR/MSA<br/>
+                  Behörig Kulturbyggnader<br/>
+                  Medlem i Nätverk för Byggnadsvård på Gotland<br/></i>
+                </p>
 
 
+              </div>
             </div>
-          </div>
-          <div class="w3-col l6 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-              <div class="w3-display-bottomright w3-padding" style="font-size: x-small; color: #555;">Foto: Lena Karlin</div>
-              <img src="images/Susan.png" alt="House" style="width:100%">
+            <div class="w3-col l6 m6 w3-margin-bottom">
+              <div class="w3-display-container">
+                <div class="w3-display-bottomright w3-padding" style="font-size: x-small; color: #555;">Foto: Lena Karlin</div>
+                <img src="images/Susan.png" alt="House" style="width:100%">
+              </div>
             </div>
-          </div>
-      </div>
+        </div>
+
+      </div> <!-- end me -->
 
 
     <br/>
@@ -321,13 +322,11 @@ html {
   </div>
 
 <!-- Page content -->
-<!--<div class="w3-content w3-padding" style="max-width:1564px">-->
 
   <!-- Project Section -->
   <div class="w3-container w3-padding-32" id="projects">
     <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Projekt</h3>
   </div>
-
 
 
   <div class="w3-row-padding">
@@ -750,7 +749,6 @@ html {
 
     </div>
   </div> <!-- end of avail -->
-
 
 
 </div>
