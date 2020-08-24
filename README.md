@@ -1,2 +1,2 @@
 # rekoark.github.io
-web content for rekoark.se
+web content for rekoark.se.
